@@ -1,0 +1,40 @@
+.profile-info {
+  font-family: 'Comic Neue', cursive;
+}
+
+.profile-info__name-box {
+  background-color: #33855c;
+  height: 130px;
+}
+
+.profile-info__name {
+  margin: 0;
+  font-size: 44px;
+  text-align: center;
+  padding-top: 40px;
+}
+
+.profile-info__box-img-info {
+  display: flex;
+  justify-content: center;
+}
+
+.profile-info__image {
+  max-width: 491px;
+  height: 508px;
+}
+
+.profile-info__container-info {
+  width: 50%;
+  display: grid;
+  /* grid-template-rows: 1fr 1fr; */
+  grid-template-columns: 1fr 1fr;
+  justify-items: flex-end;
+}
+
+.profile-info__title {
+}
+
+.profile-info__description {
+  justify-self: flex-start;
+}
