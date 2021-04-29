@@ -1,33 +1,60 @@
 import React from 'react';
+import { useEffect, useState, useCallback } from 'react';
+
 import Character from '../components/Character';
+import axios from 'axios';
 
 import '../styles/character.css';
 
-import wolverine from '../images/wolverine.jpg';
-import rough from '../images/rough.jpg';
-import beast from '../images/beast.jpg';
-import black_cat from '../images/black-cat.jpg';
-import professor_x from '../images/professor-x.jpg';
-import emma from '../images/emma.jpg';
-import gambit from '../images/gambit.jpg';
-import black_widow from '../images/black-widow.jpg';
-import colossus from '../images/colossus.jpg';
-import elektra from '../images/elektra.jpg';
-
 function CharactersPage() {
+  const [charactersList, setCharactersList] = useState([]);
+  const [offset, setOffset] = useState(0);
+
+  const offsetHandler = useCallback(() => {
+    setOffset(offset + 10);
+  }, [offset]);
+
+  useEffect(() => {
+    async function fetchCharactersData() {
+      try {
+        const apiCallResponse = await axios.get('https://gateway.marvel.com/v1/public/characters', {
+          params: {
+            apikey: 'a5837db97d72016c81a7a776f4240db9',
+            limit: 10,
+            offset: offset,
+          },
+        });
+        console.log(apiCallResponse.data.data.results);
+        setCharactersList(apiCallResponse.data.data.results);
+      } catch (error) {
+        console.log('👷 Error 👷', error);
+      }
+    }
+
+    fetchCharactersData();
+  }, [offsetHandler, offset]);
+
+  if (charactersList.length === 0) {
+    return <p>Sorry, empty list</p>;
+  }
+
   return (
-    <div className='character__container'>
-      <Character image={wolverine} alt='Wolverine' name='WOLVERINE' />
-      <Character image={rough} alt='Rough' name='ROUGH' />
-      <Character image={beast} alt='Beast' name='BEAST' />
-      <Character image={black_cat} alt='Black cat' name='BLACK CAT' />
-      <Character image={professor_x} alt='Professor X' name='PROFESSOR X' />
-      <Character image={emma} alt='Emma Frost' name='EMMA FROST' />
-      <Character image={gambit} alt='Gambit' name='GAMBIT' />
-      <Character image={black_widow} alt='Black Widow' name='BLACK WIDOW' />
-      <Character image={colossus} alt='Colossus' name='COLOSSUS' />
-      <Character image={elektra} alt='Elektra' name='ELEKTRA' />
-    </div>
+    <>
+      <div className='character__container'>
+        {charactersList?.map((characterItem) => {
+          return (
+            <Character
+              key={characterItem.id}
+              image={`${characterItem.thumbnail.path}.${characterItem.thumbnail.extension}`}
+              name={characterItem.name}
+            />
+          );
+        })}
+      </div>
+      <button onClick={offsetHandler} className='character__button' type='submit'>
+        Next
+      </button>
+    </>
   );
 }
 
