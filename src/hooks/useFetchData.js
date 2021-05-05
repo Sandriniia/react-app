@@ -11,7 +11,7 @@ const useFetchData = () => {
           apikey: 'a5837db97d72016c81a7a776f4240db9',
           limit: requestConfig.limit ? requestConfig.limit : 10,
           offset: requestConfig.offset ? requestConfig.offset : null,
-          name: requestConfig.name ? requestConfig.name : ' ',
+          name: requestConfig.name ? requestConfig.name : null,
         },
       });
       setData(apiCallResponse.data.data.results);

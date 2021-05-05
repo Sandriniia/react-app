@@ -6,7 +6,7 @@ import '../fonts/fonts.css';
 
 import search_loupe from '../images/loupe.png';
 import spider_man_main_page from '../images/spider-man.png';
-import bats from '../images/bat.png';
+// import bats from '../images/bat.png';
 
 function MainPage() {
   const [searchValue, setSearchValue] = useState(' ');
