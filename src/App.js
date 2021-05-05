@@ -20,7 +20,7 @@ function App() {
           <Route path='/characters'>
             <CharactersPage />
           </Route>
-          <Route path='/profile'>
+          <Route path='/profile/:id'>
             <CharacterProfilePage />
           </Route>
         </Switch>

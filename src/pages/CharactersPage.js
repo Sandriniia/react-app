@@ -24,7 +24,6 @@ function CharactersPage() {
             offset: offset,
           },
         });
-        console.log(apiCallResponse.data.data.results);
         setCharactersList(apiCallResponse.data.data.results);
       } catch (error) {
         console.log('👷 Error 👷', error);
