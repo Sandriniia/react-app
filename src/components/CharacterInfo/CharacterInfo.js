@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/character_info.css';
+import './character_info.css';
 
 function CharacterInfo(props) {
   return (

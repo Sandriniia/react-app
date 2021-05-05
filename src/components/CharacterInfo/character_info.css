@@ -27,12 +27,8 @@
 .profile-info__container-info {
   width: 50%;
   display: grid;
-  /* grid-template-rows: 1fr 1fr; */
   grid-template-columns: 1fr 1fr;
   justify-items: flex-end;
-}
-
-.profile-info__title {
 }
 
 .profile-info__description {

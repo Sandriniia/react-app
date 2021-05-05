@@ -1,15 +1,15 @@
-.header {
+.navigation {
   display: flex;
   padding: 20px 0;
   font-family: 'Comic Neue', cursive;
 }
 
-.header__nav {
+.navigation__nav {
   width: 390px;
   margin-left: auto;
 }
 
-.header__nav-list {
+.navigation__nav-list {
   list-style: none;
   padding: 0;
   padding-right: 30px;
@@ -18,13 +18,13 @@
   justify-content: space-between;
 }
 
-.header__link {
+.navigation__link {
   text-decoration: none;
   color: #484848;
   font-weight: bold;
   font-size: 35px;
 }
 
-.header__link_active {
+.navigation__link_active {
   color: #cc272d;
 }

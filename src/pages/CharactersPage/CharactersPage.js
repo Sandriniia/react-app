@@ -1,10 +1,10 @@
 import React from 'react';
 import { useEffect, useState, useCallback } from 'react';
 
-import Character from '../components/Character';
-import useFetchData from '../hooks/useFetchData';
+import Character from '../../components/Character/Character';
+import useFetchData from '../../hooks/useFetchData';
 
-import '../styles/character.css';
+import './characters_page.css';
 
 function CharactersPage() {
   const [offset, setOffset] = useState(0);
@@ -28,7 +28,7 @@ function CharactersPage() {
 
   return (
     <>
-      <div className='character__container'>
+      <div className='characters_page__container'>
         {data?.map((characterItem) => {
           return (
             <Character
@@ -39,7 +39,7 @@ function CharactersPage() {
           );
         })}
       </div>
-      <button onClick={offsetHandler} className='character__button' type='submit'>
+      <button onClick={offsetHandler} className='characters_page__button' type='submit'>
         Next
       </button>
     </>

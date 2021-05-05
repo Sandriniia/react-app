@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router';
 
-import CharacterInfo from '../components/CharacterInfo';
-import useFetchData from '../hooks/useFetchData';
+import CharacterInfo from '../../components/CharacterInfo/CharacterInfo';
+import useFetchData from '../../hooks/useFetchData';
 
 function CharacterProfilePage() {
   const params = useParams();

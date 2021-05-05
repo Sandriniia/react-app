@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import useFetchData from '../hooks/useFetchData';
-import '../styles/main.css';
-import '../fonts/fonts.css';
+import useFetchData from '../../hooks/useFetchData';
+import './main.css';
+import '../../fonts/fonts.css';
 
-import search_loupe from '../images/loupe.png';
-import spider_man_main_page from '../images/spider-man.png';
-// import bats from '../images/bat.png';
+import search_loupe from '../../images/loupe.png';
+import spider_man_main_page from '../../images/spider-man.png';
+// import bats from '../../images/bat.png';
 
 function MainPage() {
   const [searchValue, setSearchValue] = useState(' ');

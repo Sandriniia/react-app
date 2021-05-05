@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import '../styles/character.css';
+import './character.css';
 
 function Character(props) {
   const [isMouseOver, setIsMouseOver] = useState(false);
