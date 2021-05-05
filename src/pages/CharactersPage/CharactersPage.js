@@ -5,6 +5,7 @@ import Character from '../../components/Character/Character';
 import useFetchData from '../../hooks/useFetchData';
 
 import './characters_page.css';
+import add_button from '../../images/add_button.svg';
 
 function CharactersPage() {
   const [offset, setOffset] = useState(0);
@@ -40,7 +41,11 @@ function CharactersPage() {
         })}
       </div>
       <button onClick={offsetHandler} className='characters_page__button' type='submit'>
-        Next
+        <img
+          className='characters_page__button-img'
+          src={add_button}
+          alt='button to add new characters cards'
+        />
       </button>
     </>
   );
