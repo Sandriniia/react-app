@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
+import useFetchData from '../hooks/useFetchData';
 import '../styles/main.css';
 import '../fonts/fonts.css';
 
@@ -10,32 +10,22 @@ import bats from '../images/bat.png';
 
 function MainPage() {
   const [searchValue, setSearchValue] = useState(' ');
-  const [character, setCharacter] = useState([]);
 
   const searchValueHandler = (event) => {
     setSearchValue(event.target.value);
   };
 
+  const { data, fetchData } = useFetchData();
+
   useEffect(() => {
-    async function fetchCharactersData() {
-      try {
-        const apiCallResponse = await axios.get('https://gateway.marvel.com/v1/public/characters', {
-          params: {
-            apikey: 'a5837db97d72016c81a7a776f4240db9',
-            name: searchValue,
-            limit: 99,
-          },
-        });
-        setCharacter(apiCallResponse.data.data.results);
-      } catch (error) {
-        console.log('👷 Error 👷', error);
-      }
-    }
+    fetchData({
+      url: `https://gateway.marvel.com/v1/public/characters`,
+      name: searchValue,
+      limit: 99,
+    });
+  }, [fetchData, searchValue]);
 
-    fetchCharactersData();
-  }, [searchValue]);
-
-  const id = character?.map((characterItem) => {
+  const id = data?.map((characterItem) => {
     return characterItem.id;
   });
 
