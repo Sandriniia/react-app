@@ -3,6 +3,7 @@ import { useState, useCallback } from 'react';
 
 const useFetchData = () => {
   const [data, setData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   const fetchData = useCallback(async (requestConfig) => {
     try {
@@ -15,6 +16,7 @@ const useFetchData = () => {
         },
       });
       setData(apiCallResponse.data.data.results);
+      setIsLoading(false);
     } catch (error) {
       console.log('👷 Error 👷', error);
     }
@@ -23,6 +25,7 @@ const useFetchData = () => {
   return {
     data,
     fetchData,
+    isLoading,
   };
 };
 

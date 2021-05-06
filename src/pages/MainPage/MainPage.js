@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import Loading from '../../components/Loading/Loading';
 import useFetchData from '../../hooks/useFetchData';
 import './main.css';
 import '../../fonts/fonts.css';
@@ -14,7 +15,7 @@ function MainPage() {
     setSearchValue(event.target.value);
   };
 
-  const { data, fetchData } = useFetchData();
+  const { data, fetchData, isLoading } = useFetchData();
 
   useEffect(() => {
     fetchData({
@@ -23,6 +24,10 @@ function MainPage() {
       limit: 99,
     });
   }, [fetchData, searchValue]);
+
+  if (isLoading) {
+    return <Loading />;
+  }
 
   const id = data?.map((characterItem) => {
     return characterItem.id;

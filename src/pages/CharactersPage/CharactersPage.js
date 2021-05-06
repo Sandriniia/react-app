@@ -2,6 +2,7 @@ import React, { useEffect, useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 
 import Character from '../../components/Character/Character';
+import Loading from '../../components/Loading/Loading';
 import useFetchData from '../../hooks/useFetchData';
 
 import './characters_page.css';
@@ -14,7 +15,7 @@ function CharactersPage() {
     setOffset(offset + 10);
   }, [offset]);
 
-  const { data, fetchData } = useFetchData();
+  const { data, fetchData, isLoading } = useFetchData();
 
   useEffect(() => {
     fetchData({
@@ -23,8 +24,8 @@ function CharactersPage() {
     });
   }, [fetchData, offset, offsetHandler]);
 
-  if (data.length === 0) {
-    return <p>Sorry, empty list</p>;
+  if (isLoading) {
+    return <Loading />;
   }
 
   return (
@@ -32,7 +33,11 @@ function CharactersPage() {
       <div className='characters_page__container'>
         {data?.map((characterItem) => {
           return (
-            <Link to={`/profile/${characterItem.id}`} className="characters_page__link" type='button'>
+            <Link
+              to={`/profile/${characterItem.id}`}
+              className='characters_page__link'
+              type='button'
+            >
               <Character
                 key={characterItem.id}
                 image={`${characterItem.thumbnail.path}.${characterItem.thumbnail.extension}`}
