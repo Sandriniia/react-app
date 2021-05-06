@@ -3,12 +3,13 @@ import { useParams } from 'react-router';
 
 import CharacterInfo from '../../components/CharacterInfo/CharacterInfo';
 import Loading from '../../components/Loading/Loading';
+import ErrorMessage from '../../components/ErrorMessage/ErrorMessage';
 import useFetchData from '../../hooks/useFetchData';
 
 function CharacterProfilePage() {
   const params = useParams();
 
-  const { data, fetchData, isLoading } = useFetchData();
+  const { data, fetchData, isLoading, hasError } = useFetchData();
 
   useEffect(() => {
     fetchData({
@@ -18,6 +19,10 @@ function CharacterProfilePage() {
 
   if (isLoading) {
     return <Loading />;
+  }
+
+  if (hasError) {
+    return <ErrorMessage error={hasError} />;
   }
 
   console.log(data);

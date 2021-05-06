@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import Character from '../../components/Character/Character';
 import Loading from '../../components/Loading/Loading';
+import ErrorMessage from '../../components/ErrorMessage/ErrorMessage';
 import useFetchData from '../../hooks/useFetchData';
 
 import './characters_page.css';
@@ -15,7 +16,7 @@ function CharactersPage() {
     setOffset(offset + 10);
   }, [offset]);
 
-  const { data, fetchData, isLoading } = useFetchData();
+  const { data, fetchData, isLoading, hasError } = useFetchData();
 
   useEffect(() => {
     fetchData({
@@ -26,6 +27,10 @@ function CharactersPage() {
 
   if (isLoading) {
     return <Loading />;
+  }
+
+  if (hasError) {
+    return <ErrorMessage error={hasError} />;
   }
 
   return (

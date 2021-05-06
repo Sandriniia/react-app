@@ -4,7 +4,7 @@ import { useState, useCallback } from 'react';
 const useFetchData = () => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-
+  const [hasError, setHasError] = useState(null);
   const fetchData = useCallback(async (requestConfig) => {
     try {
       const apiCallResponse = await axios.get(requestConfig.url, {
@@ -18,7 +18,8 @@ const useFetchData = () => {
       setData(apiCallResponse.data.data.results);
       setIsLoading(false);
     } catch (error) {
-      console.log('👷 Error 👷', error);
+      setIsLoading(false);
+      setHasError(error.response.data.error);
     }
   }, []);
 
@@ -26,6 +27,7 @@ const useFetchData = () => {
     data,
     fetchData,
     isLoading,
+    hasError,
   };
 };
 

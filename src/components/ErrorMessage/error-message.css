@@ -1,0 +1,14 @@
+.error-message {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.error-message__title {
+  margin: 0;
+  font-family: 'Comic Neue', cursive;
+  color: #000;
+}
