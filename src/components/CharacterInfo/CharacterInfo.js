@@ -9,7 +9,7 @@ function CharacterInfo(props) {
       </div>
       <div className='profile-info__box-img-info'>
         <img className='profile-info__image' src={props.image} alt={props.alt} />
-        <div className='profile-info__container-info'>
+        {/* <div className='profile-info__container-info'>
           <h3 className='profile-info__title'>REAL NAME</h3>
           <p className='profile-info__description'>ANNA MARIE</p>
           <h3 className='profile-info__title'>OTHER ALIASES</h3>
@@ -29,7 +29,7 @@ function CharacterInfo(props) {
           </p>
           <h3 className='profile-info__title'>GROUP AFFILIATION</h3>
           <p className='profile-info__description'>X-Men</p>
-        </div>
+        </div> */}
       </div>
     </section>
   );

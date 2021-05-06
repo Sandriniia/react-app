@@ -9,6 +9,11 @@
   flex-wrap: wrap;
 }
 
+.characters_page__link {
+  text-decoration: none;
+  margin: 0;
+}
+
 .characters_page__button {
   margin: 0 auto;
   display: block;

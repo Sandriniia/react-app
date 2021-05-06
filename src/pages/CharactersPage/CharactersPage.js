@@ -1,5 +1,5 @@
-import React from 'react';
-import { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
+import { Link } from 'react-router-dom';
 
 import Character from '../../components/Character/Character';
 import useFetchData from '../../hooks/useFetchData';
@@ -32,11 +32,13 @@ function CharactersPage() {
       <div className='characters_page__container'>
         {data?.map((characterItem) => {
           return (
-            <Character
-              key={characterItem.id}
-              image={`${characterItem.thumbnail.path}.${characterItem.thumbnail.extension}`}
-              name={characterItem.name}
-            />
+            <Link to={`/profile/${characterItem.id}`} className="characters_page__link" type='button'>
+              <Character
+                key={characterItem.id}
+                image={`${characterItem.thumbnail.path}.${characterItem.thumbnail.extension}`}
+                name={characterItem.name}
+              />
+            </Link>
           );
         })}
       </div>
