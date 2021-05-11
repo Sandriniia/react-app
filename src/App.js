@@ -10,7 +10,7 @@ import CharacterProfilePage from './pages/CharacterProfilePage/CharacterProfileP
 function App() {
   const [theme, setTheme] = useState('day');
 
-  function handleThemeChange(event) {
+  function handleThemeChange() {
     if (theme === 'night') {
       setTheme('day');
     } else {
@@ -28,7 +28,7 @@ function App() {
               <MainPage />
             </Route>
             <Route path='/characters'>
-              <CharactersPage theme={theme}/>
+              <CharactersPage theme={theme} />
             </Route>
             <Route path='/profile/:id'>
               <CharacterProfilePage />
