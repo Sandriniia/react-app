@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, createContext, useCallback } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './app.css';
 
@@ -7,8 +7,15 @@ import MainPage from './pages/MainPage/MainPage';
 import CharactersPage from './pages/CharactersPage/CharactersPage';
 import CharacterProfilePage from './pages/CharacterProfilePage/CharacterProfilePage';
 
+export const AppContext = createContext();
+
 function App() {
   const [theme, setTheme] = useState('day');
+  const [offset, setOffset] = useState(0);
+
+  const offsetHandler = useCallback(() => {
+    setOffset(offset + 10);
+  }, [offset]);
 
   function handleThemeChange() {
     if (theme === 'night') {
@@ -18,24 +25,31 @@ function App() {
     }
   }
 
+  const globalState = {
+    offset,
+    offsetHandler,
+  };
+
   return (
     <>
-      <Router>
-        <div className={theme === 'night' ? 'app__night' : 'app__day'}>
-          <Navigation onThemeChange={handleThemeChange} theme={theme} />
-          <Switch>
-            <Route exact path='/'>
-              <MainPage />
-            </Route>
-            <Route path='/characters'>
-              <CharactersPage theme={theme} />
-            </Route>
-            <Route path='/profile/:id'>
-              <CharacterProfilePage />
-            </Route>
-          </Switch>
-        </div>
-      </Router>
+      <div className={theme === 'night' ? 'app__night' : 'app__day'}>
+        <AppContext.Provider value={globalState}>
+          <Router>
+            <Navigation onThemeChange={handleThemeChange} theme={theme} />
+            <Switch>
+              <Route exact path='/'>
+                <MainPage />
+              </Route>
+              <Route path='/characters'>
+                <CharactersPage theme={theme} />
+              </Route>
+              <Route path='/profile/:id'>
+                <CharacterProfilePage />
+              </Route>
+            </Switch>
+          </Router>
+        </AppContext.Provider>
+      </div>
     </>
   );
 }

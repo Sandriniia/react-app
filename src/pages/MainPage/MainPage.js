@@ -51,7 +51,7 @@ function MainPage() {
             autoFocus
             onChange={searchValueHandler}
           />
-          <Link to={`/profile/${id}`} className='main__button-search-link' type='submit'>
+          <Link to={`/profile/${id}/comics`} className='main__button-search-link' type='submit'>
             <button className='main__button-search'>
               <img className='main__button-search-img' src={search_loupe} alt='Search loupe' />
             </button>

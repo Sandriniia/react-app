@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState, useCallback, useContext } from 'react';
 import { Link } from 'react-router-dom';
 
 import Character from '../../components/Character/Character';
@@ -6,15 +6,15 @@ import Loading from '../../components/Loading/Loading';
 import ErrorMessage from '../../components/ErrorMessage/ErrorMessage';
 import useFetchData from '../../hooks/useFetchData';
 
+import { AppContext } from '../../App';
+
 import './characters_page.css';
 import add_button from '../../images/add_button.svg';
 
 function CharactersPage(props) {
-  const [offset, setOffset] = useState(0);
-
-  const offsetHandler = useCallback(() => {
-    setOffset(offset + 10);
-  }, [offset]);
+  const globalContext = useContext(AppContext);
+  const offset = globalContext.offset;
+  const offsetHandler = globalContext.offsetHandler;
 
   const { data, fetchData, isLoading, hasError } = useFetchData();
 
