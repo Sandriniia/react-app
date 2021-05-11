@@ -1,11 +1,14 @@
 .main {
   font-family: 'Comic Neue', cursive;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .main__image {
-  position: absolute;
-  top: 120px;
   border-radius: 30%;
+  display: block;
   max-width: 500px;
 }
 
@@ -14,8 +17,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-left: 450px;
   margin-right: 100px;
+  align-self: flex-start;
 }
 
 .main__title {
@@ -48,12 +51,18 @@
   font-family: 'Comic Neue', cursive;
 }
 
-.main__button-search {
+.main__button-search-link {
   border: none;
-  background-color: #fff;
+  background: none;
   outline: none;
   cursor: pointer;
   margin-left: 15px;
+}
+
+.main__button-search {
+  background: none;
+  outline: none;
+  border: none;
 }
 
 .main__button-search-img {

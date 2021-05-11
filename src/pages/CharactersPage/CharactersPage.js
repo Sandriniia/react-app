@@ -9,7 +9,7 @@ import useFetchData from '../../hooks/useFetchData';
 import './characters_page.css';
 import add_button from '../../images/add_button.svg';
 
-function CharactersPage() {
+function CharactersPage(props) {
   const [offset, setOffset] = useState(0);
 
   const offsetHandler = useCallback(() => {
@@ -53,6 +53,7 @@ function CharactersPage() {
         })}
       </div>
       <button onClick={offsetHandler} className='characters_page__button' type='submit'>
+        {/* {props.theme === 'night' ? ()} */}
         <img
           className='characters_page__button-img'
           src={add_button}

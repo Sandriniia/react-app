@@ -1,0 +1,12 @@
+.theme-button__img {
+  width: 70px;
+}
+
+.theme-button {
+  padding: 0;
+  width: 100px;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}

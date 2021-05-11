@@ -1,11 +1,13 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import ThemeButton from '../ThemeButton/ThemeButton';
 import './navigation.css';
 import '../../fonts/fonts.css';
 
-function Navigation() {
+function Navigation(props) {
   return (
     <header className='navigation'>
+      <ThemeButton onThemeChange={props.onThemeChange} theme={props.theme} />
       <nav className='navigation__nav'>
         <ul className='navigation__nav-list'>
           <li>

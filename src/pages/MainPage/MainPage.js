@@ -40,6 +40,7 @@ function MainPage() {
 
   return (
     <div className='main'>
+      <img className='main__image' src={spider_man_main_page} alt='Spider-man'></img>
       <div className='main__container'>
         <h1 className='main__title'>FIND YOUR HERO</h1>
         <form className='main__search-form'>
@@ -50,12 +51,13 @@ function MainPage() {
             autoFocus
             onChange={searchValueHandler}
           />
-          <Link to={`/profile/${id}`} className='main__button-search' type='submit'>
-            <img className='main__button-search-img' src={search_loupe} alt='Search loupe' />
+          <Link to={`/profile/${id}`} className='main__button-search-link' type='submit'>
+            <button className='main__button-search'>
+              <img className='main__button-search-img' src={search_loupe} alt='Search loupe' />
+            </button>
           </Link>
         </form>
       </div>
-      <img className='main__image' src={spider_man_main_page} alt='Spider-man'></img>
     </div>
   );
 }
