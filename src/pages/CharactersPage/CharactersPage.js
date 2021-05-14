@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback, useContext } from 'react';
+import React, { useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 
 import Character from '../../components/Character/Character';
@@ -39,7 +39,7 @@ function CharactersPage(props) {
         {data?.map((characterItem) => {
           return (
             <Link
-              to={`/profile/${characterItem.id}`}
+              to={`/profile/${characterItem.id}/comics`}
               className='characters_page__link'
               type='button'
             >

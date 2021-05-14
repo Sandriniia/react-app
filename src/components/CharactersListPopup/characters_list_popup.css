@@ -1,0 +1,37 @@
+.popup {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.8);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  max-width: 100%;
+  min-height: 100%;
+  z-index: 1000;
+}
+
+.popup_hidden {
+  display: none;
+}
+
+.popup__img-container {
+  margin: 0 auto;
+  margin-top: 50px;
+  display: grid;
+  width: 70%;
+  gap: 10px;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.popup__button {
+  background: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  position: absolute;
+  top: 10px;
+  left: 160px;
+  width: 40px;
+  height: 40px;
+}
