@@ -1,16 +1,16 @@
 import React, { useEffect, useContext, useState } from 'react';
 import { useParams } from 'react-router';
-import './character_profile_page.css';
+import './comics_page.css';
 import { AppContext } from '../../App';
 
-import CharacterInfo from '../../components/CharacterInfo/CharacterInfo';
+import ComicsInfo from '../../components/ComicsInfo/ComicsInfo';
 import Loading from '../../components/Loading/Loading';
 import ErrorMessage from '../../components/ErrorMessage/ErrorMessage';
 import useFetchData from '../../hooks/useFetchData';
 import CharactersListPopup from '../../components/CharactersListPopup/CharactersListPopup';
 import add_button from '../../images/add_button.svg';
 
-function CharacterProfilePage() {
+function ComicsPage() {
   const params = useParams();
 
   const [popupCharacterId, setPopupCharacterId] = useState();
@@ -55,7 +55,7 @@ function CharacterProfilePage() {
       <section className='comics'>
         {data?.map((character) => {
           return (
-            <CharacterInfo
+            <ComicsInfo
               id={character.id}
               key={character.id}
               name={character.title}
@@ -86,4 +86,4 @@ function CharacterProfilePage() {
   );
 }
 
-export default CharacterProfilePage;
+export default ComicsPage;

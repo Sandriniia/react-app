@@ -5,7 +5,7 @@ import './app.css';
 import Navigation from './components/Navigation/Navigation';
 import MainPage from './pages/MainPage/MainPage';
 import CharactersPage from './pages/CharactersPage/CharactersPage';
-import CharacterProfilePage from './pages/CharacterProfilePage/CharacterProfilePage';
+import ComicsPage from './pages/ComicsPage/ComicsPage';
 
 export const AppContext = createContext();
 
@@ -44,7 +44,7 @@ function App() {
                 <CharactersPage theme={theme} />
               </Route>
               <Route path='/profile/:id/comics'>
-                <CharacterProfilePage />
+                <ComicsPage />
               </Route>
             </Switch>
           </Router>
