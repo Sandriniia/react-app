@@ -5,16 +5,17 @@ import Character from '../../components/Character/Character';
 import Loading from '../../components/Loading/Loading';
 import ErrorMessage from '../../components/ErrorMessage/ErrorMessage';
 import useFetchData from '../../hooks/useFetchData';
+import AddButton from '../../components/AddButton/AddButton';
 
 import { AppContext } from '../../App';
 
 import './characters_page.css';
-import add_button from '../../images/add_button.svg';
 
 function CharactersPage(props) {
   const globalContext = useContext(AppContext);
   const offset = globalContext.offset;
   const offsetHandler = globalContext.offsetHandler;
+  const theme = globalContext.theme;
 
   const { data, fetchData, isLoading, hasError } = useFetchData();
 
@@ -52,14 +53,7 @@ function CharactersPage(props) {
           );
         })}
       </div>
-      <button onClick={offsetHandler} className='characters_page__button' type='submit'>
-        {/* {props.theme === 'night' ? ()} */}
-        <img
-          className='characters_page__button-img'
-          src={add_button}
-          alt='button to add new characters cards'
-        />
-      </button>
+      {data.length === 10 && <AddButton theme={theme} onClick={offsetHandler} />}
     </>
   );
 }

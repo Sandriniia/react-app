@@ -8,7 +8,7 @@ import Loading from '../../components/Loading/Loading';
 import ErrorMessage from '../../components/ErrorMessage/ErrorMessage';
 import useFetchData from '../../hooks/useFetchData';
 import CharactersListPopup from '../../components/CharactersListPopup/CharactersListPopup';
-import add_button from '../../images/add_button.svg';
+import AddButton from '../../components/AddButton/AddButton';
 
 function ComicsPage() {
   const params = useParams();
@@ -28,6 +28,7 @@ function ComicsPage() {
   const globalContext = useContext(AppContext);
   const offset = globalContext.offset;
   const offsetHandler = globalContext.offsetHandler;
+  const theme = globalContext.theme;
 
   const { data, fetchData, isLoading, hasError } = useFetchData();
 
@@ -53,30 +54,21 @@ function ComicsPage() {
   return (
     <>
       <section className='comics'>
-        {data?.map((character) => {
+        {data?.map((comics) => {
           return (
             <ComicsInfo
-              id={character.id}
-              key={character.id}
-              name={character.title}
-              image={`${character.thumbnail.path}.${character.thumbnail.extension}`}
-              alt={character.name}
-              description={character.description}
+              id={comics.id}
+              key={comics.id}
+              name={comics.title}
+              image={`${comics.thumbnail.path}.${comics.thumbnail.extension}`}
+              alt={comics.name}
+              description={comics.description}
               onClick={handleComicsInfoClick}
             />
           );
         })}
       </section>
-      {data.length === 10 && (
-        <button onClick={offsetHandler} className='characters_page__button' type='submit'>
-          {/* {props.theme === 'night' ? ()} */}
-          <img
-            className='characters_page__button-img'
-            src={add_button}
-            alt='button to add new comics'
-          />
-        </button>
-      )}
+      {data.length === 10 && <AddButton onClick={offsetHandler} theme={theme} />}
       <CharactersListPopup
         onClose={handleClosePopup}
         isOpen={isOpen}

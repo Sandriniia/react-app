@@ -28,6 +28,7 @@ function App() {
   const globalState = {
     offset,
     offsetHandler,
+    theme,
   };
 
   return (

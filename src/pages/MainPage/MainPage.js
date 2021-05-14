@@ -42,12 +42,12 @@ function MainPage() {
     <div className='main'>
       <img className='main__image' src={spider_man_main_page} alt='Spider-man'></img>
       <div className='main__container'>
-        <h1 className='main__title'>FIND YOUR HERO</h1>
+        <h1 className='main__title'>Find comics with your hero</h1>
         <form className='main__search-form'>
           <input
             className='main__search-input'
             type='text'
-            placeholder='Search'
+            placeholder='Spider-man'
             autoFocus
             onChange={searchValueHandler}
           />
