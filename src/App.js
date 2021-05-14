@@ -6,7 +6,6 @@ import Navigation from './components/Navigation/Navigation';
 import MainPage from './pages/MainPage/MainPage';
 import CharactersPage from './pages/CharactersPage/CharactersPage';
 import CharacterProfilePage from './pages/CharacterProfilePage/CharacterProfilePage';
-import CharactersListPopup from './components/CharactersListPopup/CharactersListPopup';
 
 export const AppContext = createContext();
 

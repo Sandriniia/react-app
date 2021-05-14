@@ -46,6 +46,10 @@ function CharacterProfilePage() {
     return <ErrorMessage error={hasError} />;
   }
 
+  if (data.length === 0) {
+    return <p>Sorry, nothing here</p>;
+  }
+
   return (
     <>
       <section className='comics'>
@@ -63,14 +67,16 @@ function CharacterProfilePage() {
           );
         })}
       </section>
-      <button onClick={offsetHandler} className='characters_page__button' type='submit'>
-        {/* {props.theme === 'night' ? ()} */}
-        <img
-          className='characters_page__button-img'
-          src={add_button}
-          alt='button to add new comics'
-        />
-      </button>
+      {data.length === 10 && (
+        <button onClick={offsetHandler} className='characters_page__button' type='submit'>
+          {/* {props.theme === 'night' ? ()} */}
+          <img
+            className='characters_page__button-img'
+            src={add_button}
+            alt='button to add new comics'
+          />
+        </button>
+      )}
       <CharactersListPopup
         onClose={handleClosePopup}
         isOpen={isOpen}
