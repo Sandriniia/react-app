@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/marvel-heroes-react-app/static/css/main.dd225a9d.chunk.css",
+    "main.js": "/marvel-heroes-react-app/static/js/main.1b468a64.chunk.js",
+    "main.js.map": "/marvel-heroes-react-app/static/js/main.1b468a64.chunk.js.map",
+    "runtime-main.js": "/marvel-heroes-react-app/static/js/runtime-main.cd487ac3.js",
+    "runtime-main.js.map": "/marvel-heroes-react-app/static/js/runtime-main.cd487ac3.js.map",
+    "static/css/2.e3d1336f.chunk.css": "/marvel-heroes-react-app/static/css/2.e3d1336f.chunk.css",
+    "static/js/2.586f20ed.chunk.js": "/marvel-heroes-react-app/static/js/2.586f20ed.chunk.js",
+    "static/js/2.586f20ed.chunk.js.map": "/marvel-heroes-react-app/static/js/2.586f20ed.chunk.js.map",
+    "static/js/3.20254687.chunk.js": "/marvel-heroes-react-app/static/js/3.20254687.chunk.js",
+    "static/js/3.20254687.chunk.js.map": "/marvel-heroes-react-app/static/js/3.20254687.chunk.js.map",
+    "index.html": "/marvel-heroes-react-app/index.html",
+    "static/css/2.e3d1336f.chunk.css.map": "/marvel-heroes-react-app/static/css/2.e3d1336f.chunk.css.map",
+    "static/css/main.dd225a9d.chunk.css.map": "/marvel-heroes-react-app/static/css/main.dd225a9d.chunk.css.map",
+    "static/js/2.586f20ed.chunk.js.LICENSE.txt": "/marvel-heroes-react-app/static/js/2.586f20ed.chunk.js.LICENSE.txt",
+    "static/media/CloseIcon.61b629a4.svg": "/marvel-heroes-react-app/static/media/CloseIcon.61b629a4.svg",
+    "static/media/add_button_day.8188a272.svg": "/marvel-heroes-react-app/static/media/add_button_day.8188a272.svg",
+    "static/media/button_night.eaffa03b.png": "/marvel-heroes-react-app/static/media/button_night.eaffa03b.png",
+    "static/media/error.0e8ed76b.png": "/marvel-heroes-react-app/static/media/error.0e8ed76b.png",
+    "static/media/loupe.54cdd49e.png": "/marvel-heroes-react-app/static/media/loupe.54cdd49e.png",
+    "static/media/spider-man.69d406c7.png": "/marvel-heroes-react-app/static/media/spider-man.69d406c7.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.cd487ac3.js",
+    "static/css/2.e3d1336f.chunk.css",
+    "static/js/2.586f20ed.chunk.js",
+    "static/css/main.dd225a9d.chunk.css",
+    "static/js/main.1b468a64.chunk.js"
+  ]
+}
