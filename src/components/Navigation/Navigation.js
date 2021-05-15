@@ -15,7 +15,7 @@ function Navigation(props) {
               className='navigation__link'
               activeClassName='navigation__link_active'
               exact
-              to='/'
+              to='/marvel-heroes-react-app/'
             >
               Home
             </NavLink>
