@@ -44,7 +44,7 @@ function App() {
               <Route path='/profile/:id/comics'>
                 <ComicsPage />
               </Route>
-              <Route path='/:'>
+              <Route path='/marvel-heroes-react-app'>
                 <MainPage />
               </Route>
             </Switch>
