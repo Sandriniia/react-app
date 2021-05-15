@@ -35,17 +35,17 @@ function App() {
     <>
       <div className={theme === 'night' ? 'app__night' : 'app__day'}>
         <AppContext.Provider value={globalState}>
-          <Router>
+          <Router basename='/marvel-heroes-react-app'>
             <Navigation onThemeChange={handleThemeChange} theme={theme} />
             <Switch>
-              <Route exact path='/'>
-                <MainPage />
-              </Route>
               <Route path='/characters'>
                 <CharactersPage theme={theme} />
               </Route>
               <Route path='/profile/:id/comics'>
                 <ComicsPage />
+              </Route>
+              <Route path='/:'>
+                <MainPage />
               </Route>
             </Switch>
           </Router>
