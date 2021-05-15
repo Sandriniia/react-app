@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/marvel-heroes-react-app/static/css/main.dd225a9d.chunk.css",
-    "main.js": "/marvel-heroes-react-app/static/js/main.1b468a64.chunk.js",
-    "main.js.map": "/marvel-heroes-react-app/static/js/main.1b468a64.chunk.js.map",
+    "main.js": "/marvel-heroes-react-app/static/js/main.142bac53.chunk.js",
+    "main.js.map": "/marvel-heroes-react-app/static/js/main.142bac53.chunk.js.map",
     "runtime-main.js": "/marvel-heroes-react-app/static/js/runtime-main.cd487ac3.js",
     "runtime-main.js.map": "/marvel-heroes-react-app/static/js/runtime-main.cd487ac3.js.map",
     "static/css/2.e3d1336f.chunk.css": "/marvel-heroes-react-app/static/css/2.e3d1336f.chunk.css",
@@ -26,6 +26,6 @@
     "static/css/2.e3d1336f.chunk.css",
     "static/js/2.586f20ed.chunk.js",
     "static/css/main.dd225a9d.chunk.css",
-    "static/js/main.1b468a64.chunk.js"
+    "static/js/main.142bac53.chunk.js"
   ]
 }
